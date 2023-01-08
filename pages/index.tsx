@@ -1,10 +1,12 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import React from 'react';
+import { Htag } from '../components';
 
 export default function Home(): JSX.Element {
   return (
-    <div>
-      Hello, Next!))
-    </div>
+    <>
+			<Htag tag='h1'>Первый заголовок)</Htag>
+			<Htag tag='h2'>Средний заголовок)</Htag>
+			<Htag tag='h3'>Мелкий заголовок)</Htag>
+		</>
   );
 }

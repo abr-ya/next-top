@@ -4,9 +4,9 @@ body {
   padding: 0;
 
   color: var(--black);
-	background: #F5F6F8;
+  background: #F5F6F8;
 
-	font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 a {
@@ -20,11 +20,11 @@ a {
 }
 
 :root {
-	--black: #3B434E;
-	--white: white;
-	--primary: #7653FC;
-	--red: #FC836D;
-	--green: #1DC37E;
-	--green-light: #C8F8E4;
-	--font-family: 'Noto Sans KR', sans-serif;
+  --black: #3B434E;
+  --white: white;
+  --primary: #7653FC;
+  --red: #FC836D;
+  --green: #1DC37E;
+  --green-light: #C8F8E4;
+  --font-family: "Noto Sans KR", sans-serif;
 }
