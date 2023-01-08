@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
       <Htag tag='h3'>Мелкий заголовок)</Htag>
 
       <Button variant='primary'>Кнопка primary</Button>
-			<Button variant='ghost'>Кнопка ghost</Button>
+			<Button variant='ghost' arrow='right'>Кнопка ghost</Button>
     </>
   );
 }
