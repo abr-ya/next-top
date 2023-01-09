@@ -26,6 +26,7 @@
     "cross-env": "^7.0.3",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-order": "^6.0.1",
