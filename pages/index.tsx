@@ -20,7 +20,7 @@ export default function Home(): JSX.Element {
 			<Tag size='s' color='green'>Green S</Tag>
 			<Tag size='m' color='red'>Red M</Tag>
 
-      <Rating rating={4} />
+      <Rating rating={3} />
     </>
   );
 }
