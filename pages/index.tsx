@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   };
 };
 
-const Home = ({ menu }: HomeProps): JSX.Element => {
+const Home = (): JSX.Element => {
   const [rating, setRating] = useState(0);
 
   return (
