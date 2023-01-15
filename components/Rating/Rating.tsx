@@ -9,6 +9,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
 
   useEffect(() => {
     constructRating(rating);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rating]);
 
   const changeDispay = (i: number) => {
@@ -44,6 +45,7 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: Rati
           onMouseEnter={() => changeDispay(i + 1)}
           onMouseLeave={() => changeDispay(rating)}
           onClick={() => onClick(i + 1)}
+          key={i}
         >
           <StarIcon
             tabIndex={isEditable ? 0 : -1}
