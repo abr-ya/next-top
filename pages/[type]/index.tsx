@@ -2,9 +2,9 @@ import React from "react";
 import axios from "axios";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { ParsedUrlQuery } from "node:querystring";
-import { MenuItem } from "../../src/interfaces/menu.interface";
-import { withLayout } from "../../src/layout/Layout";
-import firstLevelMenu from "../../src/layout/Menu/FirstLevel";
+import { MenuItem } from "@/interfaces/index";
+import { withLayout } from "@/layout/Layout";
+import firstLevelMenu from "@/layout/Menu/FirstLevel";
 
 function Type({ firstCategory }: TypeProps): JSX.Element {
   return <>Type: {firstCategory}</>;

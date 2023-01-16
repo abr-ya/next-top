@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next";
 import React from "react";
-import { withLayout } from "../layout/Layout";
+import { withLayout } from "../src/layout/Layout";
 import axios from "axios";
-import { MenuItem } from "../interfaces/menu.interface";
+import { MenuItem } from "../src/interfaces/menu.interface";
 
 function Search(): JSX.Element {
   return <>Search</>;

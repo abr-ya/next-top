@@ -2,11 +2,11 @@ import React from "react";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import axios from "axios";
 import { ParsedUrlQuery } from "node:querystring";
-import { withLayout } from "../../src/layout/Layout";
-import { MenuItem } from "../../src/interfaces/menu.interface";
-import { TopLevelCategory, TopPageModel } from "../../src/interfaces/page.interface";
-import { ProductModel } from "../../src/interfaces/product.interface";
-import firstLevelMenu from "../../src/layout/Menu/FirstLevel";
+
+import { withLayout } from "@/layout/Layout";
+import firstLevelMenu from "@/layout/Menu/FirstLevel";
+import { MenuItem, TopLevelCategory, TopPageModel, ProductModel } from "@/interfaces/index";
+import { TopPageComponent } from "@/pages/index";
 
 interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[];
@@ -15,14 +15,9 @@ interface TopPageProps extends Record<string, unknown> {
   products: ProductModel[];
 }
 
-// menu, page - в свойствах, пока не используем
-function TopPage({ products }: TopPageProps): JSX.Element {
-  return (
-    <>
-      <p>{products && products.length}</p>
-    </>
-  );
-}
+const TopPage = ({ firstCategory, page, products }: TopPageProps): JSX.Element => (
+  <TopPageComponent firstCategory={firstCategory} page={page} products={products} />
+);
 
 export default withLayout(TopPage);
 
