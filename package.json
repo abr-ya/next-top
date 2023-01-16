@@ -7,8 +7,8 @@
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint './{components,layout,pages}/**/*.{js,ts,tsx}' --quiet",
-    "lint:fix": "eslint './{components,layout,pages}/**/*.{js,ts,tsx}' --fix",
+    "lint": "eslint './{src,pages}/**/*.{js,ts,tsx}' --quiet",
+    "lint:fix": "eslint './{src,pages}/**/*.{js,ts,tsx}' --fix",
     "style": "stylelint \"**/*.css\"",
     "style:fix": "stylelint \"**/*.css\" --fix"
   },

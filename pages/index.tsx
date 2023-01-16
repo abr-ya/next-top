@@ -1,9 +1,9 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
 import React, { useState } from "react";
-import { Button, Htag, P, Rating, Tag } from "../components";
-import { MenuItem } from "../interfaces/menu.interface";
-import { withLayout } from "../layout/Layout";
+import { Button, Htag, P, Rating, Tag } from "../src/components";
+import { MenuItem } from "../src/interfaces/menu.interface";
+import { withLayout } from "../src/layout/Layout";
 
 interface HomeProps extends Record<string, unknown> {
   menu: MenuItem[];

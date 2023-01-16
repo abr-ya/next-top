@@ -1,29 +1,30 @@
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import React from "react";
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import axios from "axios";
 import { ParsedUrlQuery } from "node:querystring";
-import { withLayout } from "../../layout/Layout";
-import { MenuItem } from "../../interfaces/menu.interface";
-import { TopLevelCategory, TopPageModel } from "../../interfaces/page.interface";
-import { ProductModel } from "../../interfaces/product.interface";
-import firstLevelMenu from "../../layout/Menu/FirstLevel";
-import { m } from "framer-motion";
+import { withLayout } from "../../src/layout/Layout";
+import { MenuItem } from "../../src/interfaces/menu.interface";
+import { TopLevelCategory, TopPageModel } from "../../src/interfaces/page.interface";
+import { ProductModel } from "../../src/interfaces/product.interface";
+import firstLevelMenu from "../../src/layout/Menu/FirstLevel";
+
+interface TopPageProps extends Record<string, unknown> {
+  menu: MenuItem[];
+  firstCategory: TopLevelCategory;
+  page: TopPageModel;
+  products: ProductModel[];
+}
 
 // menu, page - в свойствах, пока не используем
-function Course({ products }: CourseProps): JSX.Element {
+function TopPage({ products }: TopPageProps): JSX.Element {
   return (
     <>
       <p>{products && products.length}</p>
-      {/* {products.map((p) => (
-        <p key={p._id}>
-          {p?.title} == {p._id}
-        </p>
-      ))} */}
     </>
   );
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
   let paths: string[] = [];
@@ -40,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({
+export const getStaticProps: GetStaticProps<TopPageProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   if (!params) {
@@ -85,10 +86,3 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
     };
   }
 };
-
-interface CourseProps extends Record<string, unknown> {
-  menu: MenuItem[];
-  firstCategory: TopLevelCategory;
-  page: TopPageModel;
-  products: ProductModel[];
-}
