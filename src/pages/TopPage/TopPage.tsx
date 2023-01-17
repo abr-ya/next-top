@@ -1,5 +1,5 @@
 import { TopPageComponentProps } from "./TopPage.props";
-import { CardHh, Htag, Tag } from "@/components/index";
+import { Advantages, CardHh, Htag, Tag } from "@/components/index";
 import { TopLevelCategory } from "@/interfaces/index";
 import styles from "./TopPage.module.css";
 
@@ -22,12 +22,11 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
           hh.ru
         </Tag>
       </div>
-      {firstCategory == TopLevelCategory.Courses && <CardHh {...page.hh} />}
+      {firstCategory == TopLevelCategory.Courses && page.hh && <CardHh {...page.hh} />}
       {page.advantages && page.advantages.length > 0 && (
         <>
           <Htag tag="h2">Преимущства</Htag>
-          <div>Advantages component</div>
-          {/* <Advantages advantages={page.advantages} /> */}
+          <Advantages advantages={page.advantages} />
         </>
       )}
       {page.seoText && <div className={styles.seo} dangerouslySetInnerHTML={{ __html: page.seoText }} />}
