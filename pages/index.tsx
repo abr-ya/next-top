@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
 import React, { useState } from "react";
-import { Button, Htag, Input, P, Rating, Tag } from "../src/components";
+import { Button, Htag, Input, P, Rating, Tag, Textarea } from "../src/components";
 import { MenuItem } from "../src/interfaces/menu.interface";
 import { withLayout } from "../src/layout/Layout";
 
@@ -52,6 +52,7 @@ const Home = (): JSX.Element => {
 
       <Rating rating={rating} isEditable setRating={setRating} />
       <Input placeholder="тест" />
+      <Textarea placeholder="тест Textarea" />
     </>
   );
 };

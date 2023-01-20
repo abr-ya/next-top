@@ -4,6 +4,7 @@ export * from "./Card/Card";
 export * from "./CardHh/CardHh";
 export * from "./Htag/Htag";
 export * from "./Input/Input";
+export * from "./Input/Textarea";
 export * from "./P/P";
 export * from "./Rating/Rating";
 export * from "./Sort/Sort";
