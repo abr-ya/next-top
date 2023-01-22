@@ -6,6 +6,7 @@ export * from "./Htag/Htag";
 export * from "./Input/Input";
 export * from "./Input/Textarea";
 export * from "./P/P";
+export * from "./Product/Product";
 export * from "./Rating/Rating";
 export * from "./Search/Search";
 export * from "./Sort/Sort";
