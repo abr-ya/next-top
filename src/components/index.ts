@@ -2,6 +2,7 @@ export * from "./Advantages/Advantages";
 export * from "./Button/Button";
 export * from "./Card/Card";
 export * from "./CardHh/CardHh";
+export * from "./Hr/Hr";
 export * from "./Htag/Htag";
 export * from "./Input/Input";
 export * from "./Input/Textarea";
