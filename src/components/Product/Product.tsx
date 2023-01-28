@@ -1,7 +1,9 @@
+import Image from "next/image";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
 import { Button, Card, Hr, Rating, Tag } from "../index";
 import { priceRu } from "src/helpers/money";
+import Features from "./Features";
 
 export const Product = ({
   product: {
@@ -17,12 +19,13 @@ export const Product = ({
     description,
     advantages,
     disadvantages,
+    characteristics,
   },
 }: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img src={process.env.NEXT_PUBLIC_DOMAIN + image} alt={title} />
+        <Image src={`${process.env.NEXT_PUBLIC_DOMAIN}${image}`} alt={title} width={70} height={70} />
       </div>
       <div className={styles.title}>{title}</div>
       <div className={styles.price}>
@@ -51,7 +54,7 @@ export const Product = ({
       <div className={styles.rateTitle}>{reviewCount} отзывов</div>
       <Hr className={styles.hr} />
       <div className={styles.description}>{description}</div>
-      <div className={styles.feature}>фичи</div>
+      <Features data={characteristics} />
       <div className={styles.advBlock}>
         {advantages && (
           <div className={styles.advantages}>
