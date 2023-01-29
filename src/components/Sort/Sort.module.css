@@ -1,3 +1,10 @@
+.sort {
+  display: inline-block;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
 .sortIcon {
   display: none;
 }
@@ -12,13 +19,6 @@
   display: block;
 
   margin-right: 8px;
-}
-
-.sort {
-  display: inline-block;
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 40px;
 }
 
 .sortName {

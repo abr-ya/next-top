@@ -20,6 +20,11 @@ export const sortReducer = (state: SortReducerState, action: SortActions): SortR
         sort: SortEnum.Price,
         products: state.products.sort((a, b) => (a.price > b.price ? 1 : -1)),
       };
+    case SortEnum.Reviews:
+      return {
+        sort: SortEnum.Reviews,
+        products: state.products.sort((a, b) => (a.reviews.length < b.reviews.length ? 1 : -1)),
+      };
     default:
       throw new Error("Неверный тип сортировки");
   }
