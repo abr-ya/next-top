@@ -9,7 +9,7 @@ import { Search } from "@/components/index";
 export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
   return (
     <div className={cn(className, styles.sidebar)} {...props}>
-      <Link href="/">
+      <Link href="/" passHref>
         <Logo className={styles.logo} style={{ cursor: "pointer" }} />
       </Link>
       <Search />
