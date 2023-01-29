@@ -1,7 +1,7 @@
 import { CardHhProps } from "./CardHh.props";
 import styles from "./CardHh.module.css";
 import RateIcon from "./rate.svg";
-import { Card } from "..";
+import { Card } from "@/atoms/index";
 import { priceRu } from "src/helpers/money";
 
 export const CardHh = ({ count, juniorSalary, middleSalary, seniorSalary }: CardHhProps): JSX.Element => {

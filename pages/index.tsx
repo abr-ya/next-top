@@ -1,7 +1,7 @@
 import axios from "axios";
 import { GetStaticProps } from "next";
 import React, { useState } from "react";
-import { Button, Htag, Input, P, Rating, Tag, Textarea } from "../src/components";
+import { Button, H, Input, P, Rating, Tag, Textarea } from "@/atoms/index";
 import { MenuItem } from "../src/interfaces/menu.interface";
 import { withLayout } from "../src/layout/Layout";
 
@@ -28,9 +28,9 @@ const Home = (): JSX.Element => {
 
   return (
     <>
-      <Htag tag="h1">Первый заголовок)</Htag>
-      <Htag tag="h2">Средний заголовок)</Htag>
-      <Htag tag="h3">Мелкий заголовок)</Htag>
+      <H tag="h1">Первый заголовок)</H>
+      <H tag="h2">Средний заголовок)</H>
+      <H tag="h3">Мелкий заголовок)</H>
 
       <Button variant="primary">Кнопка primary</Button>
       <Button variant="ghost" arrow="right">

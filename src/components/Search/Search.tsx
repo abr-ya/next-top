@@ -1,7 +1,7 @@
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/router";
 import cn from "classnames";
-import { Button, Input } from "../index";
+import { Button, Input } from "@/atoms/index";
 import { SearchProps } from "./Search.props";
 import styles from "./Search.module.css";
 import GlassIcon from "./glass.svg";

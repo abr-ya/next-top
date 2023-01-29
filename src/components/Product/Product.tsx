@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
-import { Button, Card, Hr, Rating, Tag } from "../index";
+import { Button, Card, Hr, Rating, Tag } from "@/atoms/index";
 import { priceRu } from "src/helpers/money";
 import Features from "./Features";
 

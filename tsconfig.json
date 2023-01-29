@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/atoms/*": ["src/atoms/*"],
       "@/components/*": ["src/components/*"],
       "@/interfaces/*": ["src/interfaces/*"],
       "@/layout/*": ["src/layout/*"],
