@@ -10,7 +10,7 @@ import styles from "./TopPage.module.css";
 export const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   const [{ products: sortedProducts, sort }, dispathSort] = useReducer(sortReducer, {
     products,
-    sort: SortEnum.Reviews,
+    sort: SortEnum.Rating,
   });
 
   const setSortHandler = (sort: SortEnum) => {
