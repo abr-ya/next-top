@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { Fragment, useState } from "react";
 import Image from "next/image";
 import cn from "classnames";
 import { ProductProps } from "./Product.props";
@@ -6,10 +6,11 @@ import styles from "./Product.module.css";
 import { Button, Card, Hr, Rating, Tag } from "@/atoms/index";
 import { priceRu } from "src/helpers/money";
 import Features from "./Features";
-import { Review } from "..";
+import { Review, ReviewForm } from "..";
 
 export const Product = ({
   product: {
+    _id,
     title,
     initialRating,
     reviewAvg,
@@ -99,8 +100,12 @@ export const Product = ({
         })}
       >
         {reviews.map((r) => (
-          <Review key={r._id} review={r} />
+          <Fragment key={r._id}>
+            <Review review={r} />
+            <Hr />
+          </Fragment>
         ))}
+        <ReviewForm productId={_id} />
       </Card>
     </>
   );
