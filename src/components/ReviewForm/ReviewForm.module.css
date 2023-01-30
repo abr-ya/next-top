@@ -37,6 +37,8 @@
 }
 
 .success {
+  position: relative;
+
   background: var(--green-light);
 }
 
