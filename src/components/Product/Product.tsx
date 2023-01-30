@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useRef, useState } from "react";
 import Image from "next/image";
 import cn from "classnames";
 import { ProductProps } from "./Product.props";
@@ -9,6 +9,7 @@ import Features from "./Features";
 import { Review, ReviewForm } from "..";
 
 export const Product = ({
+  className,
   product: {
     _id,
     title,
@@ -26,13 +27,24 @@ export const Product = ({
     characteristics,
     reviews,
   },
+  ...props
 }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = useState(!!reviews.length);
 
   const toggleReview = () => setIsReviewOpened((prev) => !prev);
 
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image src={`${process.env.NEXT_PUBLIC_DOMAIN}${image}`} alt={title} width={70} height={70} />
@@ -61,7 +73,11 @@ export const Product = ({
         </div>
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
-        <div className={styles.rateTitle}>{reviewCount} отзывов</div>
+        <div className={styles.rateTitle}>
+          <a href="#ref" onClick={scrollToReview}>
+            {reviewCount} отзывов
+          </a>
+        </div>
         <Hr className={styles.hr} />
         <div className={styles.description}>{description}</div>
         <Features data={characteristics} />
@@ -98,6 +114,7 @@ export const Product = ({
           [styles.opened]: isReviewOpened,
           [styles.closed]: !isReviewOpened,
         })}
+        ref={reviewRef} // for scroll
       >
         {reviews.map((r) => (
           <Fragment key={r._id}>
@@ -107,6 +124,6 @@ export const Product = ({
         ))}
         <ReviewForm productId={_id} />
       </Card>
-    </>
+    </div>
   );
 };
