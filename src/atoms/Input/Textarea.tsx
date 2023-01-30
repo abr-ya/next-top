@@ -10,7 +10,7 @@ export const Textarea = forwardRef(
       <div className={cn(styles.inputWrapper, className)}>
         <textarea
           ref={ref}
-          className={cn(styles.input, {
+          className={cn(styles.input, styles.w100, {
             [styles.error]: error,
           })}
           {...props}

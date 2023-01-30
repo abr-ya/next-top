@@ -1,7 +1,7 @@
+import { ForwardedRef, forwardRef } from "react";
+import cn from "classnames";
 import { InputProps } from "./Input.props";
 import styles from "./Input.module.css";
-import cn from "classnames";
-import { ForwardedRef, forwardRef } from "react";
 
 // eslint-disable-next-line react/display-name
 export const Input = forwardRef(
@@ -15,6 +15,7 @@ export const Input = forwardRef(
           ref={ref}
           {...props}
         />
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
       </div>
     );
   },
