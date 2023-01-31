@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { TopPageComponentProps } from "./TopPage.props";
 import { Advantages, CardHh, Product, Sort } from "@/components/index";
 import { H, Tag } from "@/atoms/index";
@@ -12,6 +12,10 @@ export const TopPageComponent = ({ firstCategory, page, products }: TopPageCompo
     products,
     sort: SortEnum.Rating,
   });
+
+  useEffect(() => {
+    dispathSort({ type: "reset", initialState: products });
+  }, [products]);
 
   const setSortHandler = (sort: SortEnum) => {
     dispathSort({ type: sort });
