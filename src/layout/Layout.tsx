@@ -5,6 +5,7 @@ import React, { FunctionComponent } from "react";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
 import { IMenuContext, MenuContextProvider } from "../context/menu.context";
+import { Up } from "../atoms";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
       <Sidebar className={styles.sidebar} />
       <div className={styles.body}>{children}</div>
       <Footer className={styles.footer} />
+      <Up />
     </div>
   );
 };

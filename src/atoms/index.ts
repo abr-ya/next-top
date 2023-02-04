@@ -1,4 +1,5 @@
 export * from "./Button/Button";
+export * from "./ButtonIcon/ButtonIcon";
 export * from "./Card/Card";
 export * from "./Hr/Hr";
 export * from "./H/H";
@@ -7,3 +8,4 @@ export * from "./Input/Textarea";
 export * from "./P/P";
 export * from "./Rating/Rating";
 export * from "./Tag/Tag";
+export * from "./Up/Up";
