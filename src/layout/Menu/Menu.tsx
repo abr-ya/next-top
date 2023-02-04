@@ -17,21 +17,13 @@ export const Menu = (): JSX.Element => {
   const variants = {
     visible: {
       marginBottom: 20,
-      transition: shouldReduceMotion
-        ? {}
-        : {
-            when: "beforeChildren",
-            staggerChildren: 0.1,
-          },
+      transition: shouldReduceMotion ? {} : { when: "beforeChildren", staggerChildren: 0.1 },
     },
     hidden: { marginBottom: 0 },
   };
 
   const variantsChildren = {
-    visible: {
-      opacity: 1,
-      height: 29,
-    },
+    visible: { opacity: 1, height: 29 },
     hidden: { opacity: shouldReduceMotion ? 1 : 0, height: 0 },
   };
 
