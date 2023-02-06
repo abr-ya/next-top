@@ -5,19 +5,11 @@
 
 /* main styles */
 
-.closed {
+.reviews {
   overflow: hidden;
-
-  max-height: 0;
-  padding: 0;
-}
-
-.opened {
-  max-height: auto;
-  padding: 30px;
 }
 
 /* reviews looks like link) */
 .rateTitle a {
-	color: var(--primary);
+  color: var(--primary);
 }
