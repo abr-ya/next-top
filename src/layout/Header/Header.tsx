@@ -6,6 +6,7 @@ import { Sidebar } from "../Sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { motion, useReducedMotion } from "framer-motion";
+import { ButtonIcon } from "@/atoms/index";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -33,7 +34,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   return (
     <header className={cn(className, styles.header)} {...props}>
       <Logo />
-      <button onClick={() => setIsOpened(true)}>открыть</button>
+      <ButtonIcon variant="white" icon="menu" onClick={() => setIsOpened(true)} />
       <motion.div
         className={styles.mobileMenu}
         variants={variants}
@@ -41,9 +42,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         animate={isOpened ? "opened" : "closed"}
       >
         <Sidebar />
-        <button className={styles.menuClose} onClick={() => setIsOpened(false)}>
-          закрыть
-        </button>
+        <ButtonIcon className={styles.menuClose} variant="white" icon="close" onClick={() => setIsOpened(false)} />
       </motion.div>
     </header>
   );
